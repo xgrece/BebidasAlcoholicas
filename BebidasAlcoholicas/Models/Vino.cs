@@ -9,8 +9,7 @@ namespace BebidasAlcoholicas.Models
 {
     internal class Vino : Bebida, IBebidaAlcoholica
     {
-        public Vino(int Cantidad, string Nombre)
-            : base(Nombre, Cantidad)
+        public Vino(string Nombre, int Cantidad) : base(Nombre, Cantidad)
         {
         }
 

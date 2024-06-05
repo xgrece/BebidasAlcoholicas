@@ -7,22 +7,49 @@ using System.Threading.Tasks;
 
 namespace BebidasAlcoholicas.Models
 {
-    internal class Bebida
+    class Bebida
     {
-        public string nombre { get; set; }
-        public int cantidad { get; set; }
+        public string Nombre { get; set; }
+        public int Cantidad { get; set; }
+        public string marca { get; set; }
 
+        //Como escribir de otra forma los getter y los setter's.
+        /*
+         
+        public string GetNombre()
+        {
+            return nombre;
+        }
+
+        public void SetCantidad(int cantidad)
+        {
+            this.Cantidad = cantidad
+        }
+        public void SetNombre(string nombre)
+        {
+            this.Nombre = nombre
+        }
+
+        */
         public Bebida(string nombre, int cantidad)
         {
-            this.nombre = nombre;
-            this.cantidad = cantidad;
+            this.Nombre = nombre;
+            this.Cantidad = cantidad;
         }
 
         public Bebida() { }
 
-        public void tomarse(int cuantoBebio)
+        public void Tomarse(int cuantoBebio)
         {
-            this.cantidad -= cuantoBebio;
+            Cantidad -= cuantoBebio;
+            /*
+            //En caso de poder ingresar mas de una vez el "Tomarse" evaluara si esto llega a 0 evitando numeros negativos.
+
+            if (cuantoBebio > 0 && cuantoBebio <= Cantidad)
+                Cantidad -= cuantoBebio;
+            else
+                Console.WriteLine("La cantidad a beber es inválida o excede la cantidad disponible.");
+            */
         }
     }
 }

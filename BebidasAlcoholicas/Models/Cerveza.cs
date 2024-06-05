@@ -9,28 +9,26 @@ namespace BebidasAlcoholicas.Models
 {
     internal class Cerveza : Bebida, IBebidaAlcoholica
     {
-        internal string marca;
-
-        public Cerveza(int Cantidad, string Nombre)
-            : base(Nombre, Cantidad)
+        /*
+        public Vino(int Cantidad, string Nombre = "Vino") : base(Nombre, Cantidad)
+        {
+            
+        }
+       */
+        public Cerveza( string Nombre, int Cantidad) : base(Nombre, Cantidad)
         {
         }
-
-        public Cerveza(string nombre)
-        {
-
-        }
-
-        public Cerveza()
-        {
-        }
-
+        public Cerveza() { }
         public int Alcohol { get; set; }
+
+        public void maxRecomendado()
+        {
+            Console.WriteLine("El maximo permitido de cervezas es de dos birras por persona");
+        }
 
         public void MaxRecomendado()
         {
-            Console.WriteLine("El maximo permito de birras es cinco latas por persona");
+            throw new NotImplementedException();
         }
-
     }
 }

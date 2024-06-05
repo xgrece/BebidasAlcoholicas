@@ -6,7 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] numeros = new int[5] { 1, 2, 3, 4, 9 };
+        /*
+       int[] numeros = new int[5] { 1, 2, 3, 4, 9 };
         int numero1 = numeros[0];
 
         Console.WriteLine("Llamando al primer numero de la lista = " + numero1);
@@ -50,12 +51,28 @@ class Program
         Cerveza cerveza = new Cerveza();
         mostrarRecomendacion(cerveza);
 
-        CervezaBD cervezaBD = new CervezaBD();
-        var cervezas = cervezaBD.GetCervezas();
+
+        */
+
+        CervezaBD cervezaDB = new CervezaBD();
+
+        var cervezas = cervezaDB.getCervezas();
+
+        // Encabezados de tabla
+        Console.WriteLine("+----------------------+---------------+-----------+---------+");
+        Console.WriteLine("| Nombre               | Marca         | Cantidad  | Alcohol |");
+        Console.WriteLine("+----------------------+---------------+-----------+---------+");
+
+        // Datos de la tabla
         foreach (var c in cervezas)
         {
-            Console.WriteLine(c.nombre + " " + "hola");
+            Console.WriteLine($"| {c.Nombre,-20} | {c.marca,-13} | {c.Alcohol,-9} | {c.Cantidad,-7} |");
         }
+
+        // Pie de tabla
+        Console.WriteLine("+----------------------+---------------+-----------+---------+");
+
+        Console.ReadKey();
         Console.ReadLine();
 
 
